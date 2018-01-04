@@ -12,6 +12,7 @@ DB에 조건을 줘서 우선순위로 뜨도록
 ## 페이지
 - index
 - Admin
+- banner(scaffold로 생성) : CRUD
 
 
 

@@ -2,9 +2,17 @@
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
+  <a class="navbar-brand mx-auto" href="#">
+    <img src="http://image.cjmall.net/public/confirm/static/deploy/webjars/ec-static-common/dist/common-cjmall-pc/others/7f1d7e88786d6e25ac07bc99f7cfb260/img/common/cjmall/p/logo_seasonal_201712.png" height="40" alt="shopping smart cjmall">
+  </a>
   <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
     <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
       <% if user_signed_in? %>
+        <% if current_user.has_role? 'admin' %>
+          <li class="nav-item active">
+            <%= link_to '관리페이지', banners_path, class: "nav-link" %>
+          </li>
+        <% end %>
         <li class="nav-item active">
           <%= link_to '로그아웃', destroy_user_session_path, method: :delete, class: "nav-link" %>
         </li>
@@ -15,8 +23,6 @@
       <% end %>
     </ul>
   </div>
-  <a class="navbar-brand mx-auto" href="#">
-      <img src="http://image.cjmall.net/public/confirm/static/deploy/webjars/ec-static-common/dist/common-cjmall-pc/others/7f1d7e88786d6e25ac07bc99f7cfb260/img/common/cjmall/p/logo_seasonal_201712.png" height="40" alt="shopping smart cjmall">
-    </a>
+  
 </nav>
 
