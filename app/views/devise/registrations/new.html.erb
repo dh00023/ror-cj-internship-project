@@ -1,29 +1,22 @@
-<h2>Sign up</h2>
+<ul class="nav justify-content-center sticky-top">
+  <p class="nav-link">간편회원가입</p>
+</ul>
+<div class="container">
+  <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+    <%= devise_error_messages! %>
 
-<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-  <%= devise_error_messages! %>
+    <div class="form-group">
+      <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "form-control", placeholder: "아이디 영문, 숫자 조함 6~12자" %>
+    </div>
 
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
-  </div>
+    <div class="form-group">
+        <%= f.password_field :password, autocomplete: "off", class: "form-control", placeholder: "비밀번호 영문, 숫자, 특수문자 조합 8~12자" %>
+    </div>
 
-  <div class="field">
-    <%= f.label :password %>
-    <% if @minimum_password_length %>
-    <em>(<%= @minimum_password_length %> characters minimum)</em>
-    <% end %><br />
-    <%= f.password_field :password, autocomplete: "off" %>
-  </div>
+    <div class="form-group">
+      <%= f.password_field :password_confirmation, autocomplete: "off",  class: "form-control", placeholder: "비밀번호 다시 입력" %>
+    </div>
 
-  <div class="field">
-    <%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "off" %>
-  </div>
-
-  <div class="actions">
-    <%= f.submit "Sign up" %>
-  </div>
-<% end %>
-
-<%= render "devise/shared/links" %>
+    <%= f.submit "가입완료" , class: "btn btn-primary btn-block"%>
+  <% end %>
+</div>
