@@ -7,6 +7,8 @@ DB에 조건을 줘서 우선순위로 뜨도록
 
 - 계절
 - 명절(holiday)
+	- [Google holiday](https://github.com/sue445/google_holiday_calendar)
+	- [ holidays ](https://github.com/holidays/holidays)
 - 날씨(명절까지 우선순위하고 할 수 있으면 하기)
 - [로그인시 https로 연결하는 것](https://github.com/plataformatec/devise/wiki/How-To:-Use-SSL-(HTTPS))
 
@@ -15,6 +17,11 @@ DB에 조건을 줘서 우선순위로 뜨도록
 - Admin
 - banner(scaffold로 생성) : CRUD
 
+## 빌표
+- 언어선택이유, 특성 : 짧은 기간내에 좋으 결과물을 내기위해서 익숙한 언어를 사용
+- DB설계를 왜이렇게 했는지
+- 어떤 오픈소스, 오픈 API 사용했는지
+- 이 기능을 구현한 이유
 
 
 ## 모델
@@ -37,3 +44,29 @@ DB에 조건을 줘서 우선순위로 뜨도록
 
 ### 1/5
 1. 'home/index'페이지 CJ MALL과 유사하게 프론트앤드 구현
+2. footer구현
+3. DB설계 자료 찾아보기
+	- holidays gem(사용할 것임)
+
+- [categorize]
+- [order of priority](https://stackoverflow.com/questions/29775500/rails-order-on-columns-values-priority-column)
+
+- 카테고리화 하는 걸로 결정.
+	- 계절(봄,여름,가을,겨울)
+	- 공휴일(holidays gem)
+- 이미지는 없으므로 임의로 설정.
+- Admin페이지에서 우선순위 결정 할 수 있도록 설정
+- 오늘 날짜가 1순위에 포함이 안되면 2순위 보여주는 것으로.
+
+- 카테고리 1 : N banner
+- User(Admin) 1 : N 카테고리
+
+지금까지 자료를 찾아본 결과로는 실시간으로 `date.holiday?`의 결과가 true이면 priority확인해서 true,false로 카테고리 확인하는 방향으로 생각중
+category의 priority / holiday여부 둘중에 뭘 먼저 확인하는지에 따라 성능 비교 해본후 결정하는 것도 좋을 것같다.
+```
+if Time.now.to_date.holiday?
+	if category.priority === 0
+		where(Time.now.to_date) holiday.image
+	else season.image
+else season.image
+```
