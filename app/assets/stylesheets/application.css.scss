@@ -9,6 +9,20 @@
  * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
  * files in this directory. Styles in this file should be added after the last require_* statement.
  * It is generally better to create a new file per style scope.
- *
  */
 @import "bootstrap";
+@import "font-awesome";
+
+img.ico_reg_flag{
+	height: 24px;	
+}
+
+#carouselExampleIndicators .carousel-item img{
+	height: 187.5px;
+}
+
+#m_menu img{
+	width: 68px;
+	height: 45px;
+	margin-left: 10px;
+}

@@ -1,5 +1,6 @@
 <ul class="nav justify-content-center sticky-top">
-  <p class="nav-link">간편회원가입</p>
+  <li class="nav-link"><%= link_to "", :back, class: "fa fa-chevron-left"%></li>
+  <li class="nav-link" >간편회원가입</li>
 </ul>
 <div class="container">
   <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>

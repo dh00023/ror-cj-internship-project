@@ -8,6 +8,7 @@ DB에 조건을 줘서 우선순위로 뜨도록
 - 계절
 - 명절(holiday)
 - 날씨(명절까지 우선순위하고 할 수 있으면 하기)
+- [로그인시 https로 연결하는 것](https://github.com/plataformatec/devise/wiki/How-To:-Use-SSL-(HTTPS))
 
 ## 페이지
 - index
@@ -30,5 +31,9 @@ DB에 조건을 줘서 우선순위로 뜨도록
 
 다음에 해야할 일
 1. nav에 underline긋기
-2. 뒤로버튼 만들기(회원가입, 로그인 페이지)
+2. 뒤로버튼 배치 재설(회원가입, 로그인 페이지)
 3. `home/index` 이미지 넣어서 CJ오쇼핑 페이지랑 유사하게 꾸미기
+	- 장바구니, 이미지 등등은 실제로 연결은되지않고 보이게
+
+### 1/5
+1. 'home/index'페이지 CJ MALL과 유사하게 프론트앤드 구현

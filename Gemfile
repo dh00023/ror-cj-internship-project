@@ -31,6 +31,7 @@ gem 'devise'
 # 프론트앤드
 gem 'bootstrap', '~> 4.0.0.beta3'
 gem 'jquery-rails'
+gem 'font-awesome-rails'
 
 #권한부여
 gem 'cancancan', '~> 2.0'
