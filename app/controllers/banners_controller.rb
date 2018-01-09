@@ -5,7 +5,12 @@ class BannersController < ApplicationController
   # GET /banners
   # GET /banners.json
   def index
-    @banners = Banner.all
+    if params[:category_id]
+      category = Category.find params[:category_id]
+      @banners = category.banners
+    else
+      @banners = Banner.all
+    end 
   end
 
   # GET /banners/1
@@ -15,7 +20,8 @@ class BannersController < ApplicationController
 
   # GET /banners/new
   def new
-    @banner = Banner.new
+    category = Category.find params[:category_id]
+    @banner = category.banners.build
     authorize! :write, @banner
   end
 
@@ -26,7 +32,8 @@ class BannersController < ApplicationController
   # POST /banners
   # POST /banners.json
   def create
-    @banner = Banner.new(banner_params)
+    category = Category.find params[:category_id]
+    @banner = category.banners.create(params[:banner])
 
     respond_to do |format|
       if @banner.save
@@ -66,7 +73,8 @@ class BannersController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_banner
-      @banner = Banner.find(params[:id])
+      category = Category.find params[:category_id]
+      @banner =category.banners.find(params[:id])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.

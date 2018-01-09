@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
-  resources :categories
-  resources :banners
+  resources :categories do
+	  resources :banners
+  end
+
   devise_for :users
   
   root 'home#index'

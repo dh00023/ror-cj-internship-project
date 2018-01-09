@@ -11,6 +11,7 @@
         <th scope="col">종류</th>
         <th scope="col">우선순위</th>
         <th scope="col"></th>
+        <th scope="col"></th>
       </tr>
     </thead>
 
@@ -21,8 +22,10 @@
           <td><%= category.name %></td>
           <td><%= category.priority %></td>
           <td><%= link_to '수정', edit_category_path(category) ,class: "btn btn-outline-dark btn-sm"%></td>
+          <td><%= link_to '배너',  category_banners_path(category) ,class: "btn btn-outline-dark btn-sm"%></td>
         </tr>
       <% end %>
     </tbody>
   </table>
+  <!--<%= link_to '카테고리 생성하기', new_category_path %>-->
 </div>

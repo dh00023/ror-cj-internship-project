@@ -16,9 +16,9 @@
       <tr>
         <td><%= banner.name %></td>
         <td><%= banner.category.name %></td>
-        <td><%= link_to 'Show', banner %></td>
-        <td><%= link_to 'Edit', edit_banner_path(banner) %></td>
-        <td><%= link_to 'Destroy', banner, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Show', [banner.category, banner] %></td>
+        <td><%= link_to 'Edit', edit_category_banner_path(banner.category, banner) %></td>
+        <td><%= link_to 'Destroy', [banner.category, banner], method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -26,4 +26,4 @@
 
 <br>
 
-<%= link_to 'New Banner', new_banner_path %>
+<%= link_to 'New Banner', new_category_banner_path %>

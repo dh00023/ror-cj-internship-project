@@ -3,11 +3,11 @@
 <p>
   <strong>이름:</strong>
   <%= @banner.name %>
-  <strong>카테고:</strong>
+  <strong>카테고리:</strong>
 
   <%= @banner.category.name %>
   <%= image_tag @banner.image.url %>
 </p>
 
-<%= link_to 'Edit', edit_banner_path(@banner) %> |
-<%= link_to 'Back', banners_path %>
+<%= link_to 'Edit', edit_category_banner_path(@banner.category,@banner) %> |
+<%= link_to 'Back', category_banners_path(@banner.category) %>

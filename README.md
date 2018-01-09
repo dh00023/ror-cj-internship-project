@@ -96,6 +96,14 @@ else season.image
 3. `home_controller`에서 날짜를 가져올 때, season range생성해서 비교 후 나타나도록 설정
 4. Adimin페이지 부트스트랩 적용하기
 5. 배너모델에 이미지 넣기([gem `paper clip`](https://github.com/thoughtbot/paperclip))
-6. 배너모델 CRUD 부트스트랩적용
+6. 카테고리모델 nested 배너모델
+	- `category/index`에서 배너모델 링크 생성
+	- 카테고리별 배너모델 보여주기(`banner/index`)
+<!-- 7. 카테고리모델(new, edit) -->
+7. 배너 CRUD부트스트랩 적용하기
+	- scroll적용
 
 - paperclip migration error[https://github.com/thoughtbot/paperclip/issues/2465](https://github.com/thoughtbot/paperclip/issues/2465)
+
+앞으로 적용해야하는 것
+1. 배너변경되도록 image url수정
