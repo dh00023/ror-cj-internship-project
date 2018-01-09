@@ -70,3 +70,29 @@ if Time.now.to_date.holiday?
 	else season.image
 else season.image
 ```
+
+### 1/8
+[연습프로젝트](https://github.com/dh00023/cj_practice) 생성
+1. holiday api
+2. category model
+3. banner model
+
+이때 날짜는 계속 변동되므로 controller상에서 제어하여 배너에 나오도록
+자세한 내용은 연습프로젝트 폴더에서 확인
+
+#### 모델설계 연습
+- [계절](https://stackoverflow.com/questions/15414831/ruby-determine-season-fall-winter-spring-or-summer)
+- [공휴일](https://github.com/holidays/holidays)
+
+
+- 모델에 image는 [paperclip](https://github.com/thoughtbot/paperclip) gem사용
+
+- 모델 1:N 관계설정 간단하게 하기(https://stackoverflow.com/questions/17894688/has-many-belongs-to-relation-in-active-record-migration-rails-4)
+
+
+### 1/9
+1. 어제 practice 프로젝트에 적용한 `gem holidays`적용
+2. Category우선순위 Admin페이지에서 변경시 다른 것도 자동 Update(`Category.rb`)
+3. `home_controller`에서 날짜를 가져올 때, season range생성해서 비교 후 나타나도록 설정
+4. Adimin페이지 부트스트랩 적용하
+

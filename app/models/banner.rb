@@ -1,4 +1,3 @@
 class Banner < ApplicationRecord
-	belongs_to :user
-	resourcify
+  belongs_to :category
 end

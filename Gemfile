@@ -28,14 +28,22 @@ gem 'jbuilder', '~> 2.5'
 
 # 회원가입, 로그인
 gem 'devise'
+
+#권한부여
+gem 'cancancan', '~> 2.0'
+gem 'rolify'
+
 # 프론트앤드
 gem 'bootstrap', '~> 4.0.0.beta3'
 gem 'jquery-rails'
 gem 'font-awesome-rails'
 
-#권한부여
-gem 'cancancan', '~> 2.0'
-gem 'rolify'
+# DB간편하게 보기
+gem 'rails_db', '~> 1.6'
+
+# Holiday
+gem 'holidays', '~> 6.2'
+
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 3.0'
 # Use ActiveModel has_secure_password
