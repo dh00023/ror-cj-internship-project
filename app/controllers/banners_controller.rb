@@ -71,6 +71,6 @@ class BannersController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def banner_params
-      params.require(:banner).permit(:category)
+      params.require(:banner).permit(:category_id, :image, :name)
     end
 end

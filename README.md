@@ -94,5 +94,8 @@ else season.image
 1. 어제 practice 프로젝트에 적용한 `gem holidays`적용
 2. Category우선순위 Admin페이지에서 변경시 다른 것도 자동 Update(`Category.rb`)
 3. `home_controller`에서 날짜를 가져올 때, season range생성해서 비교 후 나타나도록 설정
-4. Adimin페이지 부트스트랩 적용하
+4. Adimin페이지 부트스트랩 적용하기
+5. 배너모델에 이미지 넣기([gem `paper clip`](https://github.com/thoughtbot/paperclip))
+6. 배너모델 CRUD 부트스트랩적용
 
+- paperclip migration error[https://github.com/thoughtbot/paperclip/issues/2465](https://github.com/thoughtbot/paperclip/issues/2465)

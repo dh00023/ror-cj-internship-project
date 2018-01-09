@@ -1,8 +1,12 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Category:</strong>
-  <%= @banner.category %>
+  <strong>이름:</strong>
+  <%= @banner.name %>
+  <strong>카테고:</strong>
+
+  <%= @banner.category.name %>
+  <%= image_tag @banner.image.url %>
 </p>
 
 <%= link_to 'Edit', edit_banner_path(@banner) %> |

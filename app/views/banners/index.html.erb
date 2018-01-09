@@ -5,6 +5,7 @@
 <table>
   <thead>
     <tr>
+      <th>banner</th>
       <th>Category</th>
       <th colspan="3"></th>
     </tr>
@@ -13,7 +14,8 @@
   <tbody>
     <% @banners.each do |banner| %>
       <tr>
-        <td><%= banner.category %></td>
+        <td><%= banner.name %></td>
+        <td><%= banner.category.name %></td>
         <td><%= link_to 'Show', banner %></td>
         <td><%= link_to 'Edit', edit_banner_path(banner) %></td>
         <td><%= link_to 'Destroy', banner, method: :delete, data: { confirm: 'Are you sure?' } %></td>
