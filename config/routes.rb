@@ -1,8 +1,8 @@
 Rails.application.routes.draw do
   resources :categories do
-	  resources :banners
+	  resources :banners, only: [:index]
   end
-
+  resources :banners, except: [:index]
   devise_for :users
   
   root 'home#index'

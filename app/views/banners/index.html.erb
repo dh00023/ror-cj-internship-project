@@ -1,29 +1,32 @@
-<p id="notice"><%= notice %></p>
+<!-- <p id="notice"><%= notice %></p> -->
+<ul class="nav justify-content-center sticky-top">
+  <li class="nav-link h5" > 관리페이지</li>
+</ul>
 
-<h1>순위</h1>
-
-<table>
-  <thead>
-    <tr>
-      <th>banner</th>
-      <th>Category</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @banners.each do |banner| %>
+<div class="container">
+  <h6 class="float-right"><span class="badge badge-dark"><%=@banners.first.category.name%></span></h6>
+  <table class="table">
+    <thead>
       <tr>
-        <td><%= banner.name %></td>
-        <td><%= banner.category.name %></td>
-        <td><%= link_to 'Show', [banner.category, banner] %></td>
-        <td><%= link_to 'Edit', edit_category_banner_path(banner.category, banner) %></td>
-        <td><%= link_to 'Destroy', [banner.category, banner], method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <th scope="col">#</th>
+        <th scope="col">배너</th>
+        <th scope="col"></th>
+        <th scope="col"></th>
+        <th scope="col"></th>
       </tr>
-    <% end %>
-  </tbody>
-</table>
+    </thead>
 
-<br>
-
-<%= link_to 'New Banner', new_category_banner_path %>
+    <tbody>
+      <% @banners.each_with_index do |banner,index| %>
+        <tr>
+          <th scope="row"><%=index+1%></th>
+          <td><%= banner.name %></td>
+          <td><%= link_to '보기', banner %></td>
+          <td><%= link_to '수정', edit_banner_path(banner) %></td>
+          <td><%= link_to '삭제', banner, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>    
+  <%= link_to '새로만들기', new_banner_path , class: "btn btn-outline-secondary text-dark btn-block"%>
+</div>
