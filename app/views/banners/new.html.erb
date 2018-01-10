@@ -1,5 +1,7 @@
-<h1>New Banner</h1>
+<ul class="nav justify-content-center sticky-top bg-white">
+  <li class="nav-link h5" >관리페이지</li>
+</ul>
 
-<%= render 'form', banner: @banner %>
-
-<%= link_to 'Back', banners_path(@banner.category) %>
+<div class="container mt-4">
+  <%= render 'form', banner: @banner %>
+</div>

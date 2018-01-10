@@ -1,4 +1,4 @@
-<ul class="nav justify-content-center sticky-top">
+<ul class="nav justify-content-center sticky-top bg-white">
   <li class="nav-link h5" >관리페이지</li>
 </ul>
 
@@ -10,8 +10,8 @@
         <th scope="col">#</th>
         <th scope="col">종류</th>
         <th scope="col">우선순위</th>
-        <th scope="col"></th>
-        <th scope="col"></th>
+        <th scope="col">수정</th>
+        <th scope="col">배너</th>
       </tr>
     </thead>
 
@@ -21,8 +21,8 @@
           <th scope="row"><%=index+1%></th>
           <td><%= category.name %></td>
           <td><%= category.priority %></td>
-          <td><%= link_to '수정', edit_category_path(category) ,class: "btn btn-outline-dark btn-sm"%></td>
-          <td><%= link_to '배너',  category_banners_path(category) ,class: "btn btn-outline-dark btn-sm"%></td>
+          <td><%= link_to '', edit_category_path(category) ,class: "fa fa-pencil fa-lg"%></td>
+          <td><%= link_to '',  category_banners_path(category) ,class: "fa fa-list fa-lg"%></td>
         </tr>
       <% end %>
     </tbody>

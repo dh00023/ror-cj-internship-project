@@ -1,5 +1,5 @@
 <!-- <p id="notice"><%= notice %></p> -->
-<ul class="nav justify-content-center sticky-top">
+<ul class="nav justify-content-center sticky-top bg-white">
   <li class="nav-link h5" > 관리페이지</li>
 </ul>
 
@@ -10,9 +10,9 @@
       <tr>
         <th scope="col">#</th>
         <th scope="col">배너</th>
-        <th scope="col"></th>
-        <th scope="col"></th>
-        <th scope="col"></th>
+        <th scope="col">보기</th>
+        <th scope="col">수정</th>
+        <th scope="col">삭제</th>
       </tr>
     </thead>
 
@@ -21,9 +21,9 @@
         <tr>
           <th scope="row"><%=index+1%></th>
           <td><%= banner.name %></td>
-          <td><%= link_to '보기', banner %></td>
-          <td><%= link_to '수정', edit_banner_path(banner) %></td>
-          <td><%= link_to '삭제', banner, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+          <td><%= link_to '', banner, class: "fa fa-eye fa-lg" %></td>
+          <td><%= link_to '', edit_banner_path(banner),class: "fa fa-pencil fa-lg" %></td>
+          <td><%= link_to '', banner, class: "fa fa-trash-o fa-lg", method: :delete, data: { confirm: 'Are you sure?' } %></td>
         </tr>
       <% end %>
     </tbody>

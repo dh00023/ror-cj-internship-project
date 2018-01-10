@@ -1,13 +1,15 @@
-<p id="notice"><%= notice %></p>
+<div class="container">
+	<div class="card mt-4 mb-1">
+	  <div class="card-body">
+	    <h5 class="card-title"><%= @banner.name %></h5>
+	    <p class="card-text"><%= @banner.category.name %></p>
+	  </div>
+	  <%= image_tag @banner.image.url ,class: "card-img-bottom"%>  
+	</div>
+	<div class="link float-right">
+		<%= link_to '수정', edit_banner_path(@banner), class: "btn btn-outline-dark" %>
+		<%= link_to '뒤로', category_banners_path(@banner.category), class: "btn btn-dark" %>	
+	</div>
+	
+</div>
 
-<p>
-  <strong>이름:</strong>
-  <%= @banner.name %>
-  <strong>카테고리:</strong>
-
-  <%= @banner.category.name %>
-  <%= image_tag @banner.image.url %>
-</p>
-
-<%= link_to 'Edit', edit_banner_path(@banner) %> |
-<%= link_to 'Back', category_banners_path(@banner.category) %>

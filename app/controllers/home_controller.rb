@@ -24,7 +24,7 @@ class HomeController < ApplicationController
   	season = today.season
   	
   	if today.holiday?(:kr)
-  		if catego.priority === 0
+  		if catego.priority === 1
   			holi=Holidays.on(today,:kr)[0][:name]
   			@banner = Banner.find_by name: holi
   		else
