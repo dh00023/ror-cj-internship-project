@@ -115,3 +115,51 @@ else season.image
 3. 카테고리 CRUD도 만들기(`new.html.erb`와 `edit.html.erb`가 중요)
 	- 카테고리 모델 생성시 priority조건
 	- 카테고리 모델 삭제시 priority조건
+4. 날씨 api 자료조사
+	- 모델(location, 위도, 경도)
+	- 뷰(위치를 관리자 페이지에서 변동할 수 있게=>`edit.html.erb`)
+
+	- [openweathermap api](https://openweathermap.org/)사용
+
+```ruby
+#https://github.com/coderhs/ruby_open_weather_map
+require 'open_weather'
+# # get current weather by city name
+# OpenWeather::Current.city("Cochin, IN", options)
+
+# # get current weather by city id
+# OpenWeather::Current.city_id("1273874", options)
+
+# # get current weather by geocode. (lat, lon)
+# OpenWeather::Current.geocode(9.94, 76.26 , options)
+
+# # get current weather for a list of city ids
+# OpenWeather::Current.cities([524901, 703448, 2643743], options)
+
+# # get current weather for a bounding box
+# OpenWeather::Current.rectangle_zone(12, 32, 15, 37, 10, options)
+
+# # get current weather for cities around a point
+# OpenWeather::Current.circle_zone(55.5, 37.5, 10, options)
+
+# By default temperature is returned in fahrenheit to get the current weather in degrees celsius use unit as follows.
+# lat위도 lon경도
+
+options = { units: "metric", APPID: "ee91ae8a96a41933de679492dd6d7d07" }
+options[:lang] = "kr"
+a=OpenWeather::Current.geocode(37.544577, 126.97998, options)
+puts a
+# a.each do |key,value|
+# 	puts key, value
+# end
+
+# icon http://openweathermap.org/img/w/10d.png
+
+puts a["weather"][0]["icon"]
+```
+
+5. 이미지 UI찾기
+	- 배너관련 이미지를 찾아서 보내면 적용시켜줄거야
+
+앞으로 적용해야하는 것(시간 남으면)
+- 계절별로 기본 선택되는 글씨 색 변경되도록

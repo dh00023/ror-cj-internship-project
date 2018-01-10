@@ -23,6 +23,18 @@ class HomeController < ApplicationController
   	#today = Date.civil(2018,1,1)
   	season = today.season
   	
+    # @categories =Cateogory.order(:priority)
+    # if name1.name == "holiday"
+    #   if today.holiday?(:kr)
+    #     holi=Holidays.on(today,:kr)[0][:name]
+    #     @banner = Banner.find_by name: holi
+    #   else
+    #     @banner = Banner.find_by name: season
+    #   end
+    # else
+    #   @banner = Banner.find_by name: season
+    # end
+
   	if today.holiday?(:kr)
   		if catego.priority === 1
   			holi=Holidays.on(today,:kr)[0][:name]
