@@ -9,6 +9,7 @@ class Category < ApplicationRecord
     def priority_confirm
       categories = Category.all
       if priority_was.nil?
+      	puts self.priority
       	categories.each do |c|
 				  if self.priority <= c.priority
 				    	c.priority+=1

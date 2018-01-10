@@ -8,8 +8,6 @@ class BannersController < ApplicationController
     if params[:category_id]
       category = Category.find params[:category_id]
       @banners = category.banners
-    else
-      @banners = Banner.all
     end 
   end
 

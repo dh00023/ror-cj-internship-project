@@ -22,7 +22,7 @@
 
 	  <div class="form-group">
 	    <%= form.label :priority, '우선순위' %>
-	    <%= form.collection_select :priority, Category.order(:priority)+[Category.new(priority: Category.count+1)], :id, :priority,{},{class: "form-control"} %>
+	    <%= form.collection_select :priority, Category.order(:priority)+[Category.new(priority: Category.count+1)], :priority, :priority,{},{class: "form-control"} %>
 	  </div>
 	  
 	  <%= form.submit "제출" , class: "btn btn-primary btn-block"%>

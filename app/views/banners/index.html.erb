@@ -4,7 +4,7 @@
 </ul>
 
 <div class="container">
-  <h6 class="float-right"><span class="badge badge-dark"><%=@banners.first.category.name%></span></h6>
+  <h6 class="float-right"><span class="badge badge-dark"><% if !@banners.blank? %><%=@banners.first.category.name%><% end %></span></h6>
   <table class="table">
     <thead>
       <tr>
