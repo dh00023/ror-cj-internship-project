@@ -113,4 +113,5 @@ else season.image
 1. 배너변경되도록 image url수정
 2. 배너 CRUD부트스트랩 적용하기
 3. 카테고리 CRUD도 만들기(`new.html.erb`와 `edit.html.erb`가 중요)
-	- `new.html.erb`에서 priority생성시 조건문!(대일님이랑 상의 해보기)
+	- 카테고리 모델 생성시 priority조건
+	- 카테고리 모델 삭제시 priority조건
