@@ -1,0 +1,19 @@
+<%= form_with(model: weather, local: true) do |form| %>
+  <% if weather.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(weather.errors.count, "error") %> prohibited this weather from being saved:</h2>
+
+      <ul>
+      <% weather.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="form-group">
+    <%= form.label :choose %>
+    <%= form.collection_select :choose, Weather.order(:choose), :choose, :location, {},{class: "form-control"} %>
+  </div>
+  <%= form.submit "제출" , class: "btn btn-primary btn-block"%>
+<% end %>

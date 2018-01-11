@@ -1,5 +1,7 @@
 require 'holidays/core_extensions/date'
 require 'Date'
+require 'open_weather'
+
 class Date
   include Holidays::CoreExtensions::Date
 
@@ -22,18 +24,6 @@ class HomeController < ApplicationController
   	today = Time.now.to_date
   	#today = Date.civil(2018,1,1)
   	season = today.season
-  	
-    # @categories =Cateogory.order(:priority)
-    # if name1.name == "holiday"
-    #   if today.holiday?(:kr)
-    #     holi=Holidays.on(today,:kr)[0][:name]
-    #     @banner = Banner.find_by name: holi
-    #   else
-    #     @banner = Banner.find_by name: season
-    #   end
-    # else
-    #   @banner = Banner.find_by name: season
-    # end
 
   	if today.holiday?(:kr)
   		if catego.priority === 1
@@ -45,5 +35,15 @@ class HomeController < ApplicationController
   	else
   		@banner = Banner.find_by name: season
   	end
+
+    # weather
+    options = { units: "metric", APPID: "ee91ae8a96a41933de679492dd6d7d07" }
+    options[:lang] = "kr"
+    weather=Weather.find_by choose: 1
+    @today = OpenWeather::Current.geocode(weather.lat, weather.lon, options)
+    
+    # icon http://openweathermap.org/img/w/10d.png
+    icon = @today["weather"][0]["icon"]
+    @icon_link = "http://openweathermap.org/img/w/"+icon+ ".png"
   end
 end

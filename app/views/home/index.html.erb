@@ -1,10 +1,12 @@
 <%= render 'layouts/navbar' %>
+
 <div class="container">
-  <div class="input-group mt-3 col-md-6 offset-md-3">
-	<input type="text" class="form-control bg-muted" placeholder="야나두 최다강의+도서14권set+무료체험+장학">
-	  <span class="input-group-btn">
-	  <button class="btn btn-muted" type="button"><i class="fa fa-search" aria-hidden="true"></i></button>
-	</span>
+  <div class="input-group col-md-10 offset-md-1 mt-2 px-0">
+		<input type="text" class="form-control bg-muted" placeholder="야나두 최다강의+도서14권set+무료체험+장학">
+		<span class="input-group-btn">
+		  <button class="btn btn-muted" type="button"><i class="fa fa-search" aria-hidden="true"></i></button>
+		</span>
+		<%= image_tag @icon_link ,class: "card-img-bottom", id: "weather_icon"%>
   </div>	
 </div>
 <div>

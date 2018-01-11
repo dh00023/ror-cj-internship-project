@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180109043123) do
+ActiveRecord::Schema.define(version: 20180111013516) do
 
   create_table "banners", force: :cascade do |t|
     t.integer "category_id"
@@ -64,6 +64,15 @@ ActiveRecord::Schema.define(version: 20180109043123) do
     t.index ["role_id"], name: "index_users_roles_on_role_id"
     t.index ["user_id", "role_id"], name: "index_users_roles_on_user_id_and_role_id"
     t.index ["user_id"], name: "index_users_roles_on_user_id"
+  end
+
+  create_table "weathers", force: :cascade do |t|
+    t.string "location"
+    t.float "lat"
+    t.float "lon"
+    t.integer "choose"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
 end

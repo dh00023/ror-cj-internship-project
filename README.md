@@ -144,6 +144,11 @@ require 'open_weather'
 
 # By default temperature is returned in fahrenheit to get the current weather in degrees celsius use unit as follows.
 # lat위도 lon경도
+# 33.4890113,126.49830229999998(제주)
+# 35.872536, 128.601767(대구)
+# 37.476559,126.98163299999999(사당)
+# -18.8873014,47.372773(아프리카)
+# -82.862675,134.9947525(남극)
 
 options = { units: "metric", APPID: "ee91ae8a96a41933de679492dd6d7d07" }
 options[:lang] = "kr"
@@ -163,3 +168,11 @@ puts a["weather"][0]["icon"]
 
 앞으로 적용해야하는 것(시간 남으면)
 - 계절별로 기본 선택되는 글씨 색 변경되도록
+
+### 1/11
+
+1. 날씨 api 적용하기
+	- weather(location, lat:float, lon:float, choose:integer) 모델 생성
+	- controller에서 위치에 따른 날씨 아이콘 url
+	- admin페이지에서 위치 선택할 수 있도록 하기
+	- `home/index`에서 날씨 아이콘 보이도록 설정

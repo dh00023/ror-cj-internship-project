@@ -46,6 +46,10 @@ gem 'holidays', '~> 6.2'
 
 # image
 gem 'paperclip'
+
+# openweathermap
+gem 'open-weather'
+
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 3.0'
 # Use ActiveModel has_secure_password

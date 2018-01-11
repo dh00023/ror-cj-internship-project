@@ -3,6 +3,7 @@ class CategoriesController < ApplicationController
 
   def index
     @categories = Category.all
+    @weather = Weather.find_by choose: 1
   end
 
   def show
