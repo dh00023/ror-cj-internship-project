@@ -20,7 +20,7 @@ end
 
 class HomeController < ApplicationController
   def index
-  	catego = Category.find_by name: 'holiday'
+    catego = Category.find_by name: 'holiday'
   	today = Time.now.to_date
   	#today = Date.civil(2018,1,1)
   	season = today.season
@@ -35,7 +35,7 @@ class HomeController < ApplicationController
   	else
   		@banner = Banner.find_by name: season
   	end
-
+    @code = Recommend.find_by banner_id: @banner.id
     # weather
     options = { units: "metric", APPID: "ee91ae8a96a41933de679492dd6d7d07" }
     options[:lang] = "kr"

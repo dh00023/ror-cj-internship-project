@@ -17,13 +17,17 @@
 		<a class="pr-2 nav-link text-dark" href="#">10%적립</a>
   </nav>
 </div>
-<!-- <div id="cc">
-    <button>Load</button>
-    <ul id="list">
-    </ul>
-</div> -->
+
+<div id="container"></div>
+
+<script type="text/javascript">
+	var code2 = <%= @code.code %>;
+</script>
+
 <%= javascript_include_tag "backbone/model.js"%>
 <%= javascript_include_tag "backbone/view.js"%>
+
+
 
 <div id="moduleArea">
 	<div id="carouselExampleIndicators" class="carousel slide pb-2" data-ride="carousel">

@@ -8,18 +8,21 @@ var MyCollection = Backbone.Collection.extend({
 collection = new MyCollection();
 
 //wherever you need to do the ajax
+var codee = code2;
+console.log(codee);
 Backbone.ajax({
   type: "GET", 
 	dataType: "jsonp",
-	url: "http://display.cjmall.com/c/rest/item/36260855/itemInfo.json?channelCode=30001001&isEmployee=false&isMyzone=false&isSimple=false&isSearch=false",
+	url: "http://display.cjmall.com/c/rest/item/"+codee+"/itemInfo.json?channelCode=30001001&isEmployee=false&isMyzone=false&isSimple=false&isSearch=false",
 	data: {},
 	xhrFields: {
 		withCredentials: true
 	},
 
   success: function(val){
-    collection.add(val);  //or reset
-    console.log(val);
+    collection.add(val.result);
+    // this.collection.fetch();
+    console.log(collection.at(0));
     // callback(collection);
   }
 });
