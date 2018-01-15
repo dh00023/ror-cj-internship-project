@@ -13,6 +13,7 @@
         <th scope="col">보기</th>
         <th scope="col">수정</th>
         <th scope="col">삭제</th>
+        <th scope="col">추천상품</th>
       </tr>
     </thead>
 
@@ -24,6 +25,8 @@
           <td><%= link_to '', banner, class: "fa fa-eye fa-lg" %></td>
           <td><%= link_to '', edit_banner_path(banner),class: "fa fa-pencil fa-lg" %></td>
           <td><%= link_to '', banner, class: "fa fa-trash-o fa-lg", method: :delete, data: { confirm: 'Are you sure?' } %></td>
+          <td><%= link_to '',  banner_recommends_path(banner) ,class: "fa fa-list"%></td>
+
         </tr>
       <% end %>
     </tbody>

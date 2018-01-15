@@ -1,0 +1,31 @@
+<!-- <p id="notice"><%= notice %></p> -->
+<ul class="nav justify-content-center sticky-top bg-white">
+  <li class="nav-link h5" > 관리페이지</li>
+</ul>
+
+<div class="container">
+  <h6 class="float-right"><span class="badge badge-dark"><% if !@recomm
+    .blank? %><%=@recommends.first.banner.name%><% end %></span></h6>
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">코드</th>
+        <th scope="col">수정</th>
+        <th scope="col">삭제</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% @recommends.each_with_index do |recommend,index| %>
+        <tr>
+          <th scope="row"><%=index+1%></th>
+          <td><%= recommend.code %></td>
+          <td><%= link_to '', edit_recommend_path(recommend),class: "fa fa-pencil fa-lg" %></td>
+          <td><%= link_to '', recommend, class: "fa fa-trash-o fa-lg", method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>    
+  <%= link_to '새로만들기', new_recommend_path , class: "btn btn-outline-secondary text-dark btn-block"%>
+</div>

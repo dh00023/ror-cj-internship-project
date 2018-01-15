@@ -2,8 +2,6 @@ class BannersController < ApplicationController
   load_and_authorize_resource
   before_action :set_banner, only: [:show, :edit, :update, :destroy]
 
-  # GET /banners
-  # GET /banners.json
   def index
     if params[:category_id]
       category = Category.find params[:category_id]
@@ -11,23 +9,17 @@ class BannersController < ApplicationController
     end 
   end
 
-  # GET /banners/1
-  # GET /banners/1.json
   def show
   end
 
-  # GET /banners/new
   def new
     @banner = Banner.new
     authorize! :write, @banner
   end
 
-  # GET /banners/1/edit
   def edit
   end
 
-  # POST /banners
-  # POST /banners.json
   def create
     
     @banner = Banner.new(banner_params)
@@ -43,8 +35,6 @@ class BannersController < ApplicationController
     end
   end
 
-  # PATCH/PUT /banners/1
-  # PATCH/PUT /banners/1.json
   def update
     respond_to do |format|
       if @banner.update(banner_params)
@@ -57,8 +47,6 @@ class BannersController < ApplicationController
     end
   end
 
-  # DELETE /banners/1
-  # DELETE /banners/1.json
   def destroy
     @banner.destroy
     respond_to do |format|

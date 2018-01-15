@@ -166,9 +166,6 @@ puts a["weather"][0]["icon"]
 5. 이미지 UI찾기
 	- 배너관련 이미지를 찾아서 보내면 적용시켜줄거야
 
-앞으로 적용해야하는 것(시간 남으면)
-- 계절별로 기본 선택되는 글씨 색 변경되도록
-
 ### 1/11
 
 1. 날씨 api 적용하기
@@ -176,3 +173,45 @@ puts a["weather"][0]["icon"]
 	- controller에서 위치에 따른 날씨 아이콘 url
 	- admin페이지에서 위치 선택할 수 있도록 하기
 	- `home/index`에서 날씨 아이콘 보이도록 설정
+
+2. 추가 프로젝트 과제 : 추천상품 표시하기(CJmall api 사용해서)
+	- recommend(code, banner_id) 모델 구현
+	- Admin페이지 구성
+	- Recommend view(`index`, `edit`, `new`, `_form`)
+
+앞으로 적용해야하는 것(시간 남으면)
+- Jquery ajax, Backbone ajax알아보기
+- localhost주소 변경하기(대일님이 알려주실 것임)
+- api parsing해서 추천상품 뜰 수 있도록
+- 이미지를 누르면 바로 CJmall이랑 연결되게!
+- 계절별로 기본 선택되는 글씨 색 변경되도록
+- checkbox로 추천상품을 사용할 것인지 아닌지! 선택할 수 있도록
+
+### 1/12
+
+[코드카데미 Jquery Ajax](https://www.codecademy.com/courses/javascript-beginner-en-g7vdk/0/1)
+
+- [backbone.js](https://github.com/codebrew/backbone-rails) 구조, 구현방법 공부하기
+- [backbone 공부관련 링크](http://codefactory.kr/2011/12/18/backbone-js-require-js-tutorial/)
+
+### 1/15
+
+- cjmall api불러오기(backbone.js)
+- localhost주소 변경하기
+
+```
+$ cd /etc
+$ vi hosts
+
+127.0.0.1 local-display.cjmall.com
+127.0.0.1 dev-display.cjmall.com
+```
+`http://dev-display.cjmall.com:3000/#`로 연결됨.
+
+- view, model js생성해서 연결하기!
+
+앞으로 해야할 것
+
+- 추천상품 이미지 뜨게하기
+- view에서 trigger(공부해볼 것)만들기
+- recommend 모델에서 Code받아와서 api연결되도록 하기
