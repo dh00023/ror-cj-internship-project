@@ -2,6 +2,7 @@ var MyModel = Backbone.Model.extend({
   initialize: function(){
     // console.log('aa');
     var s = this;
+    s.code = code2;
     s.url = "http://display.cjmall.com/c/rest/item/"+code2+"/itemInfo.json?channelCode=30001001&isEmployee=false&isMyzone=false&isSimple=false&isSearch=false";
   },
   
@@ -30,7 +31,8 @@ var MyModel = Backbone.Model.extend({
     s.set ({
       imageURL  :result.imagesInfo.itemImages[0],
       name      :result.detailInfo.dispItemName,
-      price     :result.detailInfo.clpSlPrc
+      price     :result.detailInfo.clpSlPrc,
+      code      :s.code
     });
   }
 });
