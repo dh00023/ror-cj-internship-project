@@ -18,14 +18,22 @@
   </nav>
 </div>
 
-<div id="container"></div>
-
+<div class="card" id="recommend">
+  <img class="card-img-top" src="..." alt="Card image cap">
+  <div class="card-body text-right" id="personTemplate">
+    <h6 class="card-title">상품명</h6>
+    <p class="card-text">10000</p>
+  </div>
+</div>
 <script type="text/javascript">
 	var code2 = <%= @code.code %>;
 </script>
 
 <%= javascript_include_tag "backbone/model.js"%>
 <%= javascript_include_tag "backbone/view.js"%>
+<script>
+	var view = new View();
+</script>
 
 
 
