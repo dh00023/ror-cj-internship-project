@@ -4,8 +4,6 @@
 </ul>
 
 <div class="container">
-  <h6 class="float-right"><span class="badge badge-dark"><% if !@recomm
-    .blank? %><%=@recommends.first.banner.name%><% end %></span></h6>
   <table class="table">
     <thead>
       <tr>
@@ -27,5 +25,5 @@
       <% end %>
     </tbody>
   </table>    
-  <%= link_to '새로만들기', new_recommend_path , class: "btn btn-outline-secondary text-dark btn-block"%>
+  <%= link_to '뒤로가기', category_banners_path(@recommends.first.banner.category_id) , class: "btn btn-outline-secondary text-dark btn-block"%>
 </div>
