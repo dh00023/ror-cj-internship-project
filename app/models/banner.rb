@@ -4,4 +4,12 @@ class Banner < ApplicationRecord
 
   has_attached_file :image, styles: { banner: "160x40"}
   validates_attachment_content_type :image, content_type: /\Aimage\/.*\z/
+
+  after_save :recommend_new
+
+  private
+
+  def recommend_new
+  	Recommend.create(code: "", banner_id: id)
+  end
 end

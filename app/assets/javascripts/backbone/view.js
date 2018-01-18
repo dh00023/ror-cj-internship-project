@@ -10,11 +10,6 @@ var View = Backbone.View.extend({
         
         s.listenTo(s.model, 'success', s.render);
 
-
-        // model.on("success", movieSuccessHandler);
-        // this.listenTo(model,'success',this.render());  
-        // //view.listenTo(model, 'change', view.render);
-        //model.listenTo(model,'updated',this.render);
     },
     render: function(){
         var s = this;
