@@ -9,10 +9,10 @@ class Date
     # Not sure if there's a neater expression. yday is out due to leap years
     day_hash = month * 100 + mday
     case day_hash
-      when 101..401 then :winter
-      when 402..630 then :spring
-      when 701..930 then :summer
-      when 1001..1231 then :fall
+      when 1201..1231, 101..301 then :winter
+      when 302..531 then :spring
+      when 601..831 then :summer
+      when 901..1130 then :fall
     end
   end
 end
@@ -22,7 +22,7 @@ class HomeController < ApplicationController
   def index
     catego = Category.find_by name: 'holiday'
   	#today = Time.now.to_date
-  	today = Date.civil(2018,1,1)
+  	today = Date.civil(2018,12,25)
   	season = today.season
 
   	if today.holiday?(:kr)
