@@ -21,8 +21,8 @@ end
 class HomeController < ApplicationController
   def index
     catego = Category.find_by name: 'holiday'
-  	today = Time.now.to_date
-  	#today = Date.civil(2018,1,1)
+  	#today = Time.now.to_date
+  	today = Date.civil(2018,1,1)
   	season = today.season
 
   	if today.holiday?(:kr)
