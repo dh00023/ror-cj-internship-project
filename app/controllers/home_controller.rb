@@ -22,7 +22,7 @@ class HomeController < ApplicationController
   def index
     catego = Category.find_by name: 'holiday'
   	#today = Time.now.to_date
-  	today = Date.civil(2018,12,25)
+  	today = Date.civil(2018,2,16)
   	season = today.season
 
   	if today.holiday?(:kr)

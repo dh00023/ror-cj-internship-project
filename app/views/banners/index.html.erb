@@ -26,10 +26,10 @@
           <td><%= link_to '', edit_banner_path(banner),class: "fa fa-pencil fa-lg" %></td>
           <td><%= link_to '', banner, class: "fa fa-trash-o fa-lg", method: :delete, data: { confirm: 'Are you sure?' } %></td>
           <td><%= link_to '',  banner_recommends_path(banner) ,class: "fa fa-list"%></td>
-
         </tr>
       <% end %>
     </tbody>
-  </table>    
-  <%= link_to '새로만들기', new_banner_path , class: "btn btn-outline-secondary text-dark btn-block mb-5"%>
+  </table>
+  <%= link_to '뒤로가기', admin_path , class: "btn btn-dark btn-large mb-5 float-right"%>
+  <%= link_to '새로만들기', new_banner_path , class: "btn btn-dark btn-large mb-5 float-right mr-2"%>
 </div>

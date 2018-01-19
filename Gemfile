@@ -44,7 +44,7 @@ gem 'rails_db', '~> 1.6'
 # Holiday
 gem 'holidays', '~> 6.2'
 
-# image
+# image(imagemagick)
 gem 'paperclip'
 
 # openweathermap

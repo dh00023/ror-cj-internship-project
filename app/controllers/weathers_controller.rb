@@ -7,7 +7,7 @@ class WeathersController < ApplicationController
   def update
     respond_to do |format|
       if @weather.update(weather_params)
-        format.html { redirect_to categories_path, notice: 'Weather was successfully updated.' }
+        format.html { redirect_to admin_path, notice: 'Weather was successfully updated.' }
         format.json { render :show, status: :ok, location: @weather }
       else
         format.html { render :edit }
