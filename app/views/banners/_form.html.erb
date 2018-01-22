@@ -20,6 +20,14 @@
     <%= form.label :category_id, '카테고리' %>
     <%= form.collection_select :category_id, Category.all, :id, :name, {},{class: "form-control form-control-sm"} %>
   </div>
+
+  <div class="form-group">
+    <%= form.label :sdate, '날짜' %>
+    <%= form.datetime_select :sdate,date_separator: '/', datetime_separator: '-', use_month_numbers: true, class: 'form-control', default: Time.now.to_date%>
+    <%= form.label :sdate, '~' %>
+    <%= form.datetime_select :edate, date_separator: '/', datetime_separator: '-', use_month_numbers: true, class: 'form-control', default: Time.now.to_date + 1%>
+  </
+  </div>
   
   <div class="form-group">
     <%= form.label :image %>

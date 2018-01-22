@@ -20,17 +20,17 @@ d=Holidays.year_holidays([:kr],date)
 
 # 연휴 목록 이름 저장
 d.each do |dd|
-   Banner.create(name: dd[:name], category_id: 1)
+   Banner.create(name: dd[:name], category_id: 1, sdate: dd[:date],edate: dd[:date])
 end
 
 Banner.find(4).destroy
 Banner.find(12).destroy
 
 # 계절 생성
-Banner.create(name: 'spring', category_id: 2)
-Banner.create(name: 'summer', category_id: 2)
-Banner.create(name: 'fall', category_id: 2)
-Banner.create(name: 'winter', category_id: 2)
+Banner.create(name: 'spring', category_id: 2, sdate: Date.civil(2018,3,1), edate: Date.civil(2018,5,31))
+Banner.create(name: 'summer', category_id: 2, sdate: Date.civil(2018,6,1), edate: Date.civil(2018,8,31))
+Banner.create(name: 'fall', category_id: 2, sdate: Date.civil(2018,9,1), edate: Date.civil(2018,11,30))
+Banner.create(name: 'winter', category_id: 2, sdate: Date.civil(2017,12,01), edate: Date.civil(2018,2,28))
 
 # 날씨 생성
 Weather.create(location: '서울', lat: 37.476559, lon: 126.98163299999999, choose: 1)

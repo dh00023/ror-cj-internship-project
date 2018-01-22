@@ -3,6 +3,8 @@
 	  <div class="card-body">
 	    <h5 class="card-title"><%= @banner.name %></h5>
 	    <p class="card-text"><%= @banner.category.name %></p>
+	    <p class="card-text"><%= @banner.sdate %></p>
+	    <p class="card-text"><%= @banner.edate %></p>
 	  </div>
 	  <%= image_tag @banner.image.url ,class: "card-img-bottom"%>  
 	</div>
