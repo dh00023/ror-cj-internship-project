@@ -35,6 +35,10 @@ gem 'rolify'
 
 # 프론트앤드
 gem 'bootstrap', '~> 4.0.0.beta3'
+gem "bootstrap_form",
+    git: "https://github.com/bootstrap-ruby/rails-bootstrap-forms.git",
+    branch: "master"
+
 gem 'jquery-rails'
 gem 'font-awesome-rails'
 
